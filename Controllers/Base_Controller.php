@@ -32,7 +32,7 @@ class Base
             $link = "http";
         $link .= "://";
         $link .= $_SERVER['HTTP_HOST'];
-        $link .= "/Mai";
+        $link .= "/CongNghePhanMem";
         return $link;
     }
 }

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $baseUrl = window.location.origin + "/Mai";
+  $baseUrl = window.location.origin + "/CongNghePhanMem";
   $("#dialog").dialog({
     modal: true,
     autoOpen: false,
