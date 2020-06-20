@@ -72,12 +72,15 @@ class Profile extends Base
         if ($_SESSION['user']['permission'] == '1') {
             echo '<h5 class="text-center">Hóa đơn khách hàng</h5>';
         }
-        foreach ($data as $key => $value) {
-            if ($_SESSION['user']['permission'] == '1') {
-                $value['customer'] = $this->model->nameUser($data[$key]['customer']);
-                include('./Views/Profile/ordersAdmin.php');
-            } else include('./Views/Profile/Orders.php');
-        }
+		if($data != null){
+			foreach ((array)$data as $key => $value) {
+				if ($_SESSION['user']['permission'] == '1') {
+					$value['customer'] = $this->model->nameUser($data[$key]['customer']);
+					include('./Views/Profile/ordersAdmin.php');
+				} else include('./Views/Profile/Orders.php');
+			}
+		}
+		
         echo '<div class="col-sm-12 justify-content-center d-flex">';
         $current_page = $result['current'];
         $total_page = $result['total'];
